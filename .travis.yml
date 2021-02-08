@@ -1,4 +1,4 @@
-language: ruby
+language: python
 
 services:
   - docker
@@ -7,3 +7,5 @@ before_install:
   - docker build -t e419/curl .
   - docker ps -a
 
+script:
+   - python test.py
