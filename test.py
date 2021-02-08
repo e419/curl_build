@@ -18,7 +18,7 @@ class ImageTest(unittest.TestCase):
 
             docker run -t --rm curl --version
         """
-        self.assertIn('curl', subprocess.check_output(['docker', 'run', '-t', '--rm', 'e419/curl', '--version']))
+        self.assertIn(b'curl', subprocess.check_output(['docker', 'run', '-t', '--rm', 'e419/curl', '--version']))
 
     def test_url(self):
         """ Running container url retrieval 
@@ -27,7 +27,7 @@ class ImageTest(unittest.TestCase):
             docker run -t --rm e419/curl http://google.com        
         """
         self.assertIn(
-            '301 Moved',
+            b'301 Moved',
             subprocess.check_output(['docker', 'run', '-t', '--rm', 'e419/curl', 'http://google.com']))
 
 
