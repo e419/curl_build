@@ -1,0 +1,11 @@
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker build -t e419/curl .
+  - docker ps -a
+
+script:
+  - bundle exec rake test
