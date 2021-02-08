@@ -28,7 +28,7 @@ class ImageTest(unittest.TestCase):
         """
         self.assertIn(
             '301 Moved',
-            subprocess.check_output(['docker', 'run', '-t', '--rm', 'curl', 'http://google.com']))
+            subprocess.check_output(['docker', 'run', '-t', '--rm', 'e419/curl', 'http://google.com']))
 
 
 if __name__ == "__main__":

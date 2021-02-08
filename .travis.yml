@@ -5,7 +5,7 @@ services:
 
 before_install:
   - docker build -t e419/curl .
-  - docker ps -a
+  - docker images 
 
 script:
    - python test.py
