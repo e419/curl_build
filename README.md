@@ -16,7 +16,7 @@ git \
 	--tags https://github.com/curl/curl curl-\* | sort -t '/' -k 3 -V | tail -n1 | cut --delimiter='/' --fields=3
 ```
 
-For newer version of git this approach is also suites purpose. 
+For newer version of git this approach below also suites purpose. 
 ```bash
 # for git older than 2.14
 git \
@@ -31,7 +31,12 @@ git \
 ## cUrl build
 
 Git build based on [autotools](https://www.lrde.epita.fr/~adl/dl/autotools.pdf). 
+
 To decrease binary size I am using static build and `strip` to remove unnecessary information from strippable files.
+
+Build is taking place in two containers:
+1. First one is responsible on creating static cUrl binary.
+2. Second is `production use` image with size of 7.86MB (That is smaller then curlimages/curl with 11.1MB as of `strip` and libs).
 
 #### Notes 
 
