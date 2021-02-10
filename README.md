@@ -28,6 +28,11 @@ git \
 	curl-\* | tail --lines 1  | cut --delimiter='/' --fields=3 | tr -d '^{}'
 ```
 
+## cUrl build
+
+Git build based on [autotools](https://www.lrde.epita.fr/~adl/dl/autotools.pdf). 
+To decrease binary size I am using static build and `strip` to remove unnecessary information from strippable files.
+
 #### Notes 
 
 1. [Issues · curl/curl-docker · GitHub](https://github.com/curl/curl-docker/issues)
